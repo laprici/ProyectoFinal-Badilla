@@ -1,43 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemCategoryContainer = (props) => {
+    const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+    const handleDropdownToggle = () => {
+        setDropdownOpen(!isDropdownOpen);
+    };
+
     return (
-        <ul className="dropdown-menu">
+        <ul className={`dropdown-menu${isDropdownOpen ? ' show' : ''}`}>
             <li>
-                <a className="dropdown-item" href="#">
-                    <Link to='category/matematica'>
-                        {props.category1}
-                    </Link>
-                </a>
+                <Link className="dropdown-item" to='/category/matematica'>
+                    {props.category1}
+                </Link>
             </li>
             <li>
-                <a className="dropdown-item" href="#">
-                    <Link to='category/psicologia'>
-                        {props.category2}
-                    </Link>
-                </a>
+                <Link className="dropdown-item" to='/category/psicologia'>
+                    {props.category2}
+                </Link>
             </li>
             <li>
-                <a className="dropdown-item" href="#">
-                    <Link to='category/historia'>
-                        {props.category3}
-                    </Link>
-                </a>
+                <Link className="dropdown-item" to='/category/historia'>
+                    {props.category3}
+                </Link>
             </li>
             <li>
-                <a className="dropdown-item" href="#">
-                    <Link to='category/sociologia'>
-                        {props.category4}
-                    </Link>
-                </a>
+                <Link className="dropdown-item" to='/category/sociologia'>
+                    {props.category4}
+                </Link>
             </li>
             <li>
-                <a className="dropdown-item" href="#">
-                    <Link to='category/literatura'>
-                        {props.categoty5}
-                    </Link>
-                </a>
+                <Link className="dropdown-item" to='/category/literatura'>
+                    {props.category5}
+                </Link>
             </li>
         </ul>
     );

@@ -1,7 +1,8 @@
 
-import React from 'react';
 import { useEffect } from 'react';
 import CartWidget from './CartWidget';
+import CardItem from './cardProducts/CardItem';
+
 // import ItemListContainer from './ItemListContainer';
 import ItemCategoryContainer from './ItemCategoryContainer';
 
