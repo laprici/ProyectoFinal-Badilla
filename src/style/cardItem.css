@@ -1,0 +1,19 @@
+.card-item {
+    margin: 2rem;
+    padding: 1rem;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+}
+
+.card-item img {
+    max-width: 200px;
+}
+
+.text-title {
+    padding: 0.5rem 1rem;
+}
