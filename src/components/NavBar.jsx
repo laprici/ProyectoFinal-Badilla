@@ -21,14 +21,31 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorías
+                                Idiomas
                             </a>
                             <ItemCategoryContainer
-                                category1='Matemática'
-                                category2='Psicología'
-                                category3='Historia'
-                                category4='Sociología'
-                                category5='Literatura'
+                                category1 = "English"
+                                category2 = "Danish"
+                                category3 = "Italian"
+                                category4 = "Akkadian"
+                                category5 = "Hebrew"
+                                category6 = "Arabic"
+                                category7 = "Old Norse"
+                                category8 = "French"
+                                category9 = "French, English"
+                                category10 = "Spanish"
+                                category11 = "German"
+                                category12 = "Russian"
+                                category13 = "Greek"
+                                category14 = "Portuguese"
+                                category15 = "Norwegian"
+                                category16 = "Sanskrit"
+                                category17 = "Japanese"
+                                category18 = "Icelandic"
+                                category19 = "Swedish"
+                                category20 = "Chinese"
+                                category21 = "Classical Latin"
+                                category22 = "Persian"
                             />
                         </li>
                         <li className="nav-item">

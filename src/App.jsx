@@ -2,8 +2,7 @@ import './App.css'
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
-import CardItem from './components/cardProducts/CardItem.jsx';
-import ItemListContainer from './components/ItemListContainer.jsx';
+import BodyCardContainer from './components/BodyCardContainer.jsx'
 // import CardContainer from './components/CardContainer.jsx';
 
 function App() {
@@ -11,12 +10,12 @@ function App() {
     <BrowserRouter>
       <NavBar />
         <Routes>
-          <Route path='/'>
+          <Route path='/' element={<BodyCardContainer />}>
           </Route>
-          <Route path='category/:idCategory'></Route>
-          <Route path='item/:idItem'></Route>
+          <Route path='category/:idCatLanguage' element={<BodyCardContainer />}></Route>
+          <Route path='item/:idItem' ></Route>
         </Routes>
-      <CardItem />
+      <BodyCardContainer />
     </BrowserRouter>
   );
 }
