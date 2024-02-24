@@ -6,21 +6,25 @@ import { useParams } from "react-router-dom";
 
 const BodyCardContainer = () => {
     const [ data, dataBase ] = useState([]);
-    let { idCatLanguage } = useParams();
+    let { idCategory } = useParams();
 
     useEffect( () => {
-        if(!idCatLanguage){
+        if(!idCategory){
             fetchData(books)
             .then(response => dataBase(response))
             .catch(error => console.error(error))
         }else {
-            const booksFilter = books.filter( book => (book.language).toUpperCase() === idCatLanguage.toUpperCase() );
+            const booksFilter = books.filter(book => 
+                book.categories.some(category => 
+                  category.toUpperCase().includes(idCategory.toUpperCase())
+                )
+            );
             fetchData(booksFilter)
             .then(response => dataBase(response))
             .catch(error => console.error(error))
         }
         
-    }, [idCatLanguage]);
+    }, [idCategory]);
 
 
     return (
@@ -28,12 +32,11 @@ const BodyCardContainer = () => {
             {
                 data.map( book => (
                     <CardItem
-                        url = {book.imageLink}
+                        image = {book.thumbnailUrl}
                         author = {book.author}
-                        country = {book.country}
                         name = {book.title}
                         price = {book.price}
-                        key = {book.id}
+                        key = {book._id}
                     />
                 ))
             }

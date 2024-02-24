@@ -1,62 +1,101 @@
-
-import { useEffect } from 'react';
-import CartWidget from './CartWidget';
-import CardItem from './cardProducts/CardItem';
+import React, { useState } from "react";
+import CartWidget from "./CartWidget";
+import CardItem from "./cardProducts/CardItem";
 
 // import ItemListContainer from './ItemListContainer';
-import ItemCategoryContainer from './ItemCategoryContainer';
+import ItemCategoryContainer from "./ItemCategoryContainer";
+
+const CATEGORIES = [
+  "Open Source",
+  "Mobile",
+  "Java",
+  "Software Engineering",
+  "Internet",
+  "Web Development",
+  "Miscellaneous",
+  "Microsoft .NET",
+  "Microsoft",
+  "Next Generation Databases",
+  "PowerBuilder",
+  "Client-Server",
+  "Computer Graphics",
+  "Object-Oriented Programming",
+  "S",
+  "Networking",
+  "Theory",
+  "Programming",
+  "Python",
+  "Mobile Technology",
+  "Business",
+  "P",
+  "XML",
+  "Perl",
+  "java",
+  "Microsoft/.NET",
+  "Miscella",
+  "Object-Technology Programming",
+  "internet",
+  ".NET",
+  "Algorithmic Art",
+  "PHP",
+  "SOA",
+  "Computer Graph",
+  "Client Server",
+  "In Action",
+  "Software Development",
+];
 
 const NavBar = () => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container">
-                <a className="navbar-brand" href="/">
-                    <img src="../../logo.png" id="logo" />
-                </a>
-                <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="/">Inicio</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Idiomas
-                            </a>
-                            <ItemCategoryContainer
-                                category1 = "English"
-                                category2 = "Danish"
-                                category3 = "Italian"
-                                category4 = "Akkadian"
-                                category5 = "Hebrew"
-                                category6 = "Arabic"
-                                category7 = "Old Norse"
-                                category8 = "French"
-                                category9 = "French, English"
-                                category10 = "Spanish"
-                                category11 = "German"
-                                category12 = "Russian"
-                                category13 = "Greek"
-                                category14 = "Portuguese"
-                                category15 = "Norwegian"
-                                category16 = "Sanskrit"
-                                category17 = "Japanese"
-                                category18 = "Icelandic"
-                                category19 = "Swedish"
-                                category20 = "Chinese"
-                                category21 = "Classical Latin"
-                                category22 = "Persian"
-                            />
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-                <CartWidget />
-            </div>
-        </nav>
-    );
-}
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container">
+        <a className="navbar-brand" href="/">
+          <img src="../../logo.png" id="logo" />
+        </a>
+        <div
+          className="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Inicio
+              </a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorías
+              </a>
+              <ul className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}>
+                <li>
+                  {CATEGORIES.map((category, index) => (
+                    <ItemCategoryContainer key={index} category={category} />
+                  ))}
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+        <CartWidget />
+      </div>
+    </nav>
+  );
+};
 
 export default NavBar;

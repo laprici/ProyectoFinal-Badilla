@@ -6,7 +6,6 @@ import CardButtonDetails from './CardButtonDetails';
 import CardButtonAdd from './CardButtonAdd';
 
 const CardItem = (props) => {
-    const source = `/src/database/${props.url}`;
     return (
         <div className="card-item">
             {/* <CardImage url={props.url}/>
@@ -17,7 +16,7 @@ const CardItem = (props) => {
             />
             <CardButtonDetails />
             <CardButtonAdd /> */}
-            <img src={source} alt="" />
+            <img src={props.image} height="200px" alt="" />
             <h5 className="text-title">{props.name}</h5>
             <p>${props.price}</p>
             <button className="btn btn-primary">Agregar</button>
