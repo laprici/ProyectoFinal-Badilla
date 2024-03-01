@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/cardItem.css';
-import { useCartContext  } from '../../context/CartContext';
+
 
 const CardItem = (props) => {
+
     return (
         <div className="card-item container justify-content-between justify-content">
             <Link to={`/product-detail/${props.id}`} id="link" style={{ textDecoration: 'none', color: 'inherit' }}>
