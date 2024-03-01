@@ -1,0 +1,12 @@
+.img-details {
+    height: 40vh;
+}
+
+.product-details {
+    margin: 5%;
+}
+
+.price{
+    color: #ee0000;
+    font-size: 1.3rem;
+}

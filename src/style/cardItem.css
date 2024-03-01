@@ -2,12 +2,8 @@
     margin: 2rem;
     padding: 1rem;
     width: 250px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-}
-.container-card {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5%;
+    outline: 1px solid #e3e3e3;
+    border-radius: 12px;
 }
 
 .card-item img {
@@ -16,4 +12,19 @@
 
 .text-title {
     padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #194793;
+}
+
+.container-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
 }

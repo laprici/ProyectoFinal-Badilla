@@ -3,17 +3,23 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
 import BodyCardContainer from './components/BodyCardContainer.jsx';
-// import CardContainer from './components/CardContainer.jsx'; // Asumiendo que este es otro componente que podrías querer usar.
+import ProductDetail from './components/ProductDetail.jsx';
+import CartProvider from './context/CartContext.jsx';
+import Cart from './components/Cart.jsx';
+
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<BodyCardContainer />} />
-        <Route path="category/:idCategory" element={<BodyCardContainer />} />
-        <Route path="item/:idItem"  />
-      </Routes>
+      <CartProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<BodyCardContainer />} />
+          <Route path="category/:idCategory" element={<BodyCardContainer />} />
+          <Route path="product-detail/:id" element={<ProductDetail />}/>
+          <Route path="cart" element={<Cart />}/>
+        </Routes>
+      </CartProvider>
     </BrowserRouter>
   );
 }

@@ -28,7 +28,7 @@ const BodyCardContainer = () => {
 
 
     return (
-        <div className="container-card">
+        <div className="container-card justify-content-center">
             {
                 data.map( book => (
                     <CardItem
@@ -36,7 +36,8 @@ const BodyCardContainer = () => {
                         author = {book.author}
                         name = {book.title}
                         price = {book.price}
-                        key = {book._id}
+                        id = {book._id}
+                        key={book._id}
                     />
                 ))
             }
